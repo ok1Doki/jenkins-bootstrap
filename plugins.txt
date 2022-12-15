@@ -2,3 +2,4 @@ authorize-project:1.4.0
 job-dsl:1.81
 workflow-aggregator:2.7
 git:4.14.3
+ssh-agent:1.24.1
