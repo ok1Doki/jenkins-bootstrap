@@ -37,3 +37,19 @@ pipelineJob('spring-aws-docker') {
         }
     }
 }
+pipelineJob('spring-aws-deploy') {
+    definition {
+        cpsScm {
+            scm {
+                git {
+                    remote {
+                        url 'git@github.com:ok1Doki/spring-aws.git'
+                        credentials('Github-SSH')
+                    }
+                    branch 'dev'
+                    scriptPath('Jenkinsfile-aws')
+                }
+            }
+        }
+    }
+}
