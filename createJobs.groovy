@@ -6,32 +6,33 @@ pipelineJob('pipelineJob') {
         }
     }
 }
-pipelineJob('spring-aws') {
+pipelineJob('spring-app-build') {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
-                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        url 'https://github.com/ok1Doki/spring-with-jenkins-pipelines.git'
                         credentials('Github-Access-Token')
                     }
                     branch 'dev'
+                    scriptPath 'Jenkinsfile-app-build'
                 }
             }
         }
     }
 }
-pipelineJob('spring-aws-docker') {
+pipelineJob('spring-dockerhub-push') {
     definition {
         cpsScm {
             scm {
                 git {
                     remote {
-                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        url 'https://github.com/ok1Doki/spring-with-jenkins-pipelines.git'
                         credentials('Github-Access-Token')
                     }
                     branch 'dev'
-                    scriptPath 'Jenkinsfile-docker'
+                    scriptPath 'Jenkinsfile-dockerhub-push'
                 }
             }
         }
@@ -43,11 +44,11 @@ pipelineJob('spring-aws-deploy') {
             scm {
                 git {
                     remote {
-                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        url 'https://github.com/ok1Doki/spring-with-jenkins-pipelines.git'
                         credentials('Github-Access-Token')
                     }
                     branch 'dev'
-                    scriptPath('Jenkinsfile-aws')
+                    scriptPath('Jenkinsfile-aws-deploy')
                 }
             }
         }
