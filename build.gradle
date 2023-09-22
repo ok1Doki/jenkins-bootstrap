@@ -9,9 +9,6 @@ plugins {
 
 project.version = scmVersion.version
 
-def props = new Properties()
-file(".env").withInputStream { props.load(it) }
-
 docker {
     name "${project.name}:${project.version}"
     files "plugins.txt", "seedJob.xml", "jenkins-casc.yml"
