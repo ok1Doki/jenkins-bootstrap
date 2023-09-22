@@ -12,8 +12,8 @@ pipelineJob('spring-aws') {
             scm {
                 git {
                     remote {
-                        url 'git@github.com:ok1Doki/spring-aws.git'
-                        credentials('Github-SSH')
+                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        credentials('Github-Access-Token')
                     }
                     branch 'dev'
                 }
@@ -27,8 +27,8 @@ pipelineJob('spring-aws-docker') {
             scm {
                 git {
                     remote {
-                        url 'git@github.com:ok1Doki/spring-aws.git'
-                        credentials('Github-SSH')
+                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        credentials('Github-Access-Token')
                     }
                     branch 'dev'
                     scriptPath 'Jenkinsfile-docker'
@@ -43,8 +43,8 @@ pipelineJob('spring-aws-deploy') {
             scm {
                 git {
                     remote {
-                        url 'git@github.com:ok1Doki/spring-aws.git'
-                        credentials('Github-SSH')
+                        url 'https://github.com/ok1Doki/spring-aws.git'
+                        credentials('Github-Access-Token')
                     }
                     branch 'dev'
                     scriptPath('Jenkinsfile-aws')

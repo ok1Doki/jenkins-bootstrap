@@ -1,0 +1,35 @@
+jenkins:
+  systemMessage: "Example of configuring credentials in Jenkins"
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: "AWS_REGION"
+            value: "${AWS_REGION}"
+          - key: "SUBNET_ID"
+            value: "${AWS_SUBNET_ID}"
+
+security:
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "acceptFirstConnectionStrategy"
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - usernamePassword:
+              scope: GLOBAL
+              id: "Github-Access-Token"
+              username: "ok1Doki"
+              password: "${GITHUB_ACCESS_TOKEN}"
+              description: "Username/Password Credentials for some-user"
+          - usernamePassword:
+              scope: GLOBAL
+              id: "docker-hub"
+              username: "${DOCKER_HUB_LOGIN_USR}"
+              password: "${DOCKER_HUB_LOGIN_PSW}"
+              description: "Username/Password Credentials for Docker Hub"
+          - aws:
+              scope: GLOBAL
+              id: "aws-credentials"
+              accessKey: "${AWS_ACCESS_KEY}"
+              secretKey: "${AWS_SECRET_KEY}"

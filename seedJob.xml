@@ -7,8 +7,8 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>git@github.com:ok1Doki/jenkins-bootstrap.git</url>
-        <credentialsId>Github-SSH</credentialsId>
+        <url>https://github.com/ok1Doki/jenkins-bootstrap.git</url>
+        <credentialsId>Github-Access-Token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
